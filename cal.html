@@ -9,9 +9,31 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const input = document.querySelector('input')
+          const button = document.querySelector('button')
+          const p = document.querySelector('p')
+  
+          button.addEventListener('click', () => {
+            // 입력을 숫자로 변환합니다.
+            const win = Number(input.value)
+            // 숫자가 아니라면 바로 리턴합니다.
+            if (isNaN(win)) {
+              p.textContent = '당첨금을 입력해주세요'
+              return
+            } else if (win<50000) {
+              p.textContent=`${win} 원`
+            } else if (win<300000000) {
+              const prize=win*0.78
+              p.textContent=`${prize} 원`
+            }
+        })
+        })
+      </script>
 
     <link rel='stylesheet' href='css/common.css' />
-    <link rel="stylesheet" href="css/table-css.css">
+
     <style>
         .ball {
           display: inline-block;
@@ -24,26 +46,6 @@
           text-align: center;
           margin-right: 20px;
         }
-
-        select {
-          /* 생략 */
-          width:500px;
-          /*height:100px;*/
-          font-family: "Noto Sansf KR", sans-serif;
-          font-size: 1rem;
-          font-weight: 400;
-          line-height: 1.5;
-
-          color: #444;
-          background-color: #fff;
-
-          padding: 0.6em 1.4em 0.5em 0.8em;
-          margin: 0;
-
-          border: 1px solid #aaa;
-          border-radius: 0.5em;
-          box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
-        }
       </style>
 
     <title>Lotto World</title>
@@ -52,20 +54,23 @@
     <header w3-include-html="includes/navbar.html"></header>
     <info w3-include-html="includes/info.html"></info>
 
-    <!-- random lotto -->
-    <div>
-        
-      <select title="" onchange="window.open(value,'_self');">
-          <option value="01.html" selected>이동1</option>
-          <option value="02.html">이동2</option>
-      </select>
+    <!-- 당첨금 계산 -->
+    <input type="text"> 원<br>
+    <button>계산</button>
+    <p></p>
 
-
-      <div id="number"></div>
-      <div id="table"></div>
+    <div class="card border-info mt-3 mb-3">
+        <div class="card-header bg-info text-light py-2">
+            <i class="fa fa-info-circle"> 로또 세금 정보</i>
+        </div>
+        <div class="card-body">
+            <div class="mb-2"><strong>로또 당첨금</strong></div>
+            <div>3억 이상 : 세금 33%(소득세 30% + 주민세 3%)</div>
+            <div>3억 미만 5만원 초과 : 세금 22%(소득세 20 % + 주민세 2%)</div>
+            <div>5만원 이하 : 세금 없음</div>
+        </div>
     </div>
-    <script src="js/arrayTable.js"></script>
-
+</div>
     <!--footer -->
     <footer w3-include-html="includes/footer.html"></footer>
 
