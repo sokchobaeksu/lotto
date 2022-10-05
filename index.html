@@ -44,6 +44,14 @@
           border-radius: 0.5em;
           box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
         }
+        #srcstyle{
+          border-width: 5px;
+          border-color: #CCD6DD;
+          border-style: solid;
+          padding: 5px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
       </style>
 
     <title>Lotto World</title>
@@ -56,14 +64,17 @@
     <div>
         
       <select title="" onchange="window.open(value,'_self');">
-          <option value="01.html" selected>이동1</option>
-          <option value="02.html">이동2</option>
+          <option value="number/1035.html" selected>1035회</option>
+          <option value="number/1034.html">1034회</option>
+          <option value="number/1033.html">1033회</option>
       </select>
-
-
-      <div id="number"></div>
-      <div id="table"></div>
     </div>
+
+      <img id="srcstyle"src="number/1035.jpg" >
+      
+      
+      <div id="table"></div>
+    
     <script src="js/arrayTable.js"></script>
 
     <!--footer -->

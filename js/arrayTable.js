@@ -1,8 +1,8 @@
 
 let myTable = document.querySelector('#table');
 
-let prizeNo=[9,14,34,35,41,42,2]
-document.getElementById("number").innerHTML=prizeNo
+//let prizeNo=[9,14,34,35,41,42,2]
+//document.getElementById("number").innerHTML=prizeNo
 
 let prize = [
     ["1등",8,"3,231,193,735"],
